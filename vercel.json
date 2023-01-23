@@ -2,8 +2,8 @@
     "version": 2,
     "build": [
         {"src": "deploy/wsgi.py",
-        "use": "@versel/python3.10",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
+        "use": "@versel/python3.9",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
         },
         {
         "source": "build_files.sh",
