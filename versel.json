@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "build": [
+        {"src": "deploy/wsgi.py",
+        "use": "@versel/python3.10",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
+        },
+        {
+        "source": "build_files.sh",
+        "use": "@versel/static-build",
+        "config": { "distDir": "staticfiles_build" }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        }, {
+            "src": "/(.*)",
+            "dest": "deploy/wsgi.py"
+        }
+    ]
+
+}
